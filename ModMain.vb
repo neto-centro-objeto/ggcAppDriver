@@ -1007,6 +1007,18 @@ endProc:
         xeLocServiceCenter = 5
     End Enum
 
+    Public Enum SQLCondition
+        xeNone = 0
+        xeLike = 1
+        xeNotLike = 2
+        xeEquals = 3
+        xeNotEqualTo = 4
+        xeGreaterThan = 5
+        xeGreterThanOrEqual = 6
+        xeLessThan = 7
+        xeLessThanOrEqual = 8
+    End Enum
+
     Public Const xsDATE_SHORT As String = "MM-dd-yyyy"
     Public Const xsDATE_MEDIUM As String = "MMM dd, yyyy"
     Public Const xsDATE_LONG As String = "MMMM dd, yyyy"
