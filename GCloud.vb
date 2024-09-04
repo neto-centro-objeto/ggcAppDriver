@@ -1,4 +1,7 @@
 ﻿Imports System.IO
+Imports System.Text
+Imports CrystalDecisions.Shared.Json
+Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
 Public Class GCloud
@@ -88,7 +91,15 @@ Public Class GCloud
         jsonObject("sql") = p_oArray
         jsonObject("user") = p_sUserIDxx
 
-        Dim lnRes As Integer = RMJExecute("d:\GGC_Maven_Systems", EXEC, jsonObject.ToString)
+        Dim loSettings As New JsonSerializerSettings
+
+        loSettings.NullValueHandling = NullValueHandling.Ignore
+        loSettings.DefaultValueHandling = DefaultValueHandling.Ignore
+
+        Dim lsJSON As String = JsonConvert.SerializeObject(jsonObject, loSettings)
+
+        Debug.Print(lsJSON)
+        Dim lnRes As Integer = JSONExecute("d:\GGC_Maven_Systems", EXEC, lsJSON)
 
         Dim jsonString As String = File.ReadAllText(EXECUTION_RESULT)
         Dim jsobObject As JObject = JObject.Parse(jsonString)
@@ -97,10 +108,10 @@ Public Class GCloud
             If jsobObject("result").ToString() = "success" Then
                 Return True
             Else
-                Debug.Print(jsobObject("message").ToString())
+                Debug.Print(jsobObject("error").ToString())
 
                 If p_bShowMsgx Then
-                    MsgBox(jsobObject("message").ToString(), vbCritical, "Warning")
+                    MsgBox(jsobObject("error").ToString(), vbCritical, "Warning")
                 End If
 
                 Return False
@@ -174,6 +185,31 @@ Public Class GCloud
         End If
 
         Return dataTable
+    End Function
+
+    Private Function JSONExecute(ByVal WorkingDIR As String, ByVal ProcessPath As String, ByVal FileName As String) As Integer
+        Dim objProcess As System.Diagnostics.Process
+        Dim exitCode As Integer = 1
+        Try
+            objProcess = New System.Diagnostics.Process()
+            objProcess.StartInfo.WorkingDirectory = WorkingDIR
+            objProcess.StartInfo.FileName = ProcessPath
+            objProcess.StartInfo.Arguments = """" & FileName & """"
+            objProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            objProcess.Start()
+
+            'Wait until the process passes back an exit code 
+            objProcess.WaitForExit()
+
+            exitCode = objProcess.ExitCode
+
+            'Free resources associated with this process
+            objProcess.Close()
+        Catch
+            Return exitCode
+        End Try
+
+        Return exitCode
     End Function
 
     Public Sub New()
