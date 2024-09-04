@@ -8,7 +8,6 @@ Public Class GCloud
     Private Const EXECUTION_RESULT As String = "d:\GGC_Maven_Systems\temp\exec-result.json"
 
     Dim p_sUserIDxx As String
-    Dim p_bReplcate As Boolean
     Dim p_bShowMsgx As Boolean
     Dim p_oArray As JArray
 
@@ -34,12 +33,41 @@ Public Class GCloud
         p_oArray.Add(jsonObject)
     End Sub
 
-    Public Sub AddStatement(ByVal fsSQL As String, ByVal fnLogical As SQLCondition, Optional ByVal fnResult As Integer = 0)
+    Public Sub AddStatement(ByVal fsSQL As String,
+                            ByVal fnLogical As SQLCondition,
+                            Optional ByVal fnResult As Integer = 0,
+                            Optional ByVal fbReplicte As Boolean = True,
+                            Optional ByVal fsTableNme As String = "",
+                            Optional ByVal fsBranchCd As String = "",
+                            Optional ByVal fsDestinat As String = "")
+
+        If (fbReplicte = True) Then
+            If (fsTableNme = "") Then
+                Debug.Print("Table is not set for a query to replicate.")
+                If p_bShowMsgx Then
+                    MsgBox("Table is not set for a query to replicate.", vbCritical, "Warning")
+                End If
+                Exit Sub
+            End If
+
+            If (fsBranchCd = "") Then
+                Debug.Print("Table is not set for a query to replicate.")
+                If p_bShowMsgx Then
+                    MsgBox("Table is not set for a query to replicate.", vbCritical, "Warning")
+                End If
+                Exit Sub
+            End If
+        End If
+
         ' Create a JObject to hold the parameters
         Dim jsonObject As New JObject()
         jsonObject("sql") = fsSQL
         jsonObject("condition") = fnLogical
         jsonObject("rows") = fnResult
+        jsonObject("replicate") = fbReplicte
+        jsonObject("table") = fsTableNme
+        jsonObject("branch") = fsBranchCd
+        jsonObject("destination") = fsTableNme
 
         ' Add the JObject to the JSON array
         p_oArray.Add(jsonObject)
@@ -58,7 +86,6 @@ Public Class GCloud
 
         Dim jsonObject As New JObject()
         jsonObject("sql") = p_oArray
-        jsonObject("replication") = p_bReplcate
         jsonObject("user") = p_sUserIDxx
 
         Dim lnRes As Integer = RMJExecute("d:\GGC_Maven_Systems", EXEC, jsonObject.ToString)
@@ -76,7 +103,7 @@ Public Class GCloud
                     MsgBox(jsobObject("message").ToString(), vbCritical, "Warning")
                 End If
 
-                Return Nothing
+                Return False
             End If
         Else
             Debug.Print("API Exeption Detected. Please ask assistance to MIS.")
@@ -153,7 +180,6 @@ Public Class GCloud
         p_oArray = New JArray
 
         p_sUserIDxx = ""
-        p_bReplcate = False
     End Sub
 
     Public Property UserID As String
@@ -162,15 +188,6 @@ Public Class GCloud
         End Get
         Set(ByVal fsValue As String)
             p_sUserIDxx = fsValue
-        End Set
-    End Property
-
-    Public Property Replicate As Boolean
-        Get
-            Return p_bReplcate
-        End Get
-        Set(ByVal fbValue As Boolean)
-            p_bReplcate = fbValue
         End Set
     End Property
 
