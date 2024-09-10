@@ -7,6 +7,7 @@ Imports Newtonsoft.Json.Linq
 Public Class GCloud
     Private Const QUERY As String = "query.bat"
     Private Const EXEC As String = "execute.bat"
+    Private Const CRUD As String = "d:\GGC_Maven_Systems\temp\crud.json"
     Private Const QUERY_RESULT As String = "d:\GGC_Maven_Systems\temp\query.json"
     Private Const EXECUTION_RESULT As String = "d:\GGC_Maven_Systems\temp\exec-result.json"
 
@@ -70,7 +71,7 @@ Public Class GCloud
         jsonObject("replicate") = fbReplicte
         jsonObject("table") = fsTableNme
         jsonObject("branch") = fsBranchCd
-        jsonObject("destination") = fsTableNme
+        jsonObject("destination") = fsDestinat
 
         ' Add the JObject to the JSON array
         p_oArray.Add(jsonObject)
@@ -98,8 +99,11 @@ Public Class GCloud
 
         Dim lsJSON As String = JsonConvert.SerializeObject(jsonObject, loSettings)
 
-        Debug.Print(lsJSON)
-        Dim lnRes As Integer = JSONExecute("d:\GGC_Maven_Systems", EXEC, lsJSON)
+        File.WriteAllText(CRUD, lsJSON, Encoding.UTF8)
+
+        Dim lnRes As Integer = RMJExecute("d:\GGC_Maven_Systems", EXEC, CRUD)
+        'delete the file
+        File.Delete(CRUD)
 
         Dim jsonString As String = File.ReadAllText(EXECUTION_RESULT)
         Dim jsobObject As JObject = JObject.Parse(jsonString)
@@ -187,30 +191,30 @@ Public Class GCloud
         Return dataTable
     End Function
 
-    Private Function JSONExecute(ByVal WorkingDIR As String, ByVal ProcessPath As String, ByVal FileName As String) As Integer
-        Dim objProcess As System.Diagnostics.Process
-        Dim exitCode As Integer = 1
-        Try
-            objProcess = New System.Diagnostics.Process()
-            objProcess.StartInfo.WorkingDirectory = WorkingDIR
-            objProcess.StartInfo.FileName = ProcessPath
-            objProcess.StartInfo.Arguments = """" & FileName & """"
-            objProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
-            objProcess.Start()
+    'Private Function JSONExecute(ByVal WorkingDIR As String, ByVal ProcessPath As String, ByVal FileName As String) As Integer
+    '    Dim objProcess As System.Diagnostics.Process
+    '    Dim exitCode As Integer = 1
+    '    Try
+    '        objProcess = New System.Diagnostics.Process()
+    '        objProcess.StartInfo.WorkingDirectory = WorkingDIR
+    '        objProcess.StartInfo.FileName = ProcessPath
+    '        objProcess.StartInfo.Arguments = """" & FileName & """"
+    '        objProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+    '        objProcess.Start()
 
-            'Wait until the process passes back an exit code 
-            objProcess.WaitForExit()
+    '        'Wait until the process passes back an exit code 
+    '        objProcess.WaitForExit()
 
-            exitCode = objProcess.ExitCode
+    '        exitCode = objProcess.ExitCode
 
-            'Free resources associated with this process
-            objProcess.Close()
-        Catch
-            Return exitCode
-        End Try
+    '        'Free resources associated with this process
+    '        objProcess.Close()
+    '    Catch
+    '        Return exitCode
+    '    End Try
 
-        Return exitCode
-    End Function
+    '    Return exitCode
+    'End Function
 
     Public Sub New()
         p_oArray = New JArray
