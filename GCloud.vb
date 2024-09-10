@@ -1,14 +1,17 @@
 ﻿Imports System.IO
+Imports System.Text
+Imports CrystalDecisions.Shared.Json
+Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
 Public Class GCloud
     Private Const QUERY As String = "query.bat"
     Private Const EXEC As String = "execute.bat"
+    Private Const CRUD As String = "d:\GGC_Maven_Systems\temp\crud.json"
     Private Const QUERY_RESULT As String = "d:\GGC_Maven_Systems\temp\query.json"
     Private Const EXECUTION_RESULT As String = "d:\GGC_Maven_Systems\temp\exec-result.json"
 
     Dim p_sUserIDxx As String
-    Dim p_bReplcate As Boolean
     Dim p_bShowMsgx As Boolean
     Dim p_oArray As JArray
 
@@ -34,12 +37,41 @@ Public Class GCloud
         p_oArray.Add(jsonObject)
     End Sub
 
-    Public Sub AddStatement(ByVal fsSQL As String, ByVal fnLogical As SQLCondition, Optional ByVal fnResult As Integer = 0)
+    Public Sub AddStatement(ByVal fsSQL As String,
+                            ByVal fnLogical As SQLCondition,
+                            Optional ByVal fnResult As Integer = 0,
+                            Optional ByVal fbReplicte As Boolean = True,
+                            Optional ByVal fsTableNme As String = "",
+                            Optional ByVal fsBranchCd As String = "",
+                            Optional ByVal fsDestinat As String = "")
+
+        If (fbReplicte = True) Then
+            If (fsTableNme = "") Then
+                Debug.Print("Table is not set for a query to replicate.")
+                If p_bShowMsgx Then
+                    MsgBox("Table is not set for a query to replicate.", vbCritical, "Warning")
+                End If
+                Exit Sub
+            End If
+
+            If (fsBranchCd = "") Then
+                Debug.Print("Table is not set for a query to replicate.")
+                If p_bShowMsgx Then
+                    MsgBox("Table is not set for a query to replicate.", vbCritical, "Warning")
+                End If
+                Exit Sub
+            End If
+        End If
+
         ' Create a JObject to hold the parameters
         Dim jsonObject As New JObject()
         jsonObject("sql") = fsSQL
         jsonObject("condition") = fnLogical
         jsonObject("rows") = fnResult
+        jsonObject("replicate") = fbReplicte
+        jsonObject("table") = fsTableNme
+        jsonObject("branch") = fsBranchCd
+        jsonObject("destination") = fsDestinat
 
         ' Add the JObject to the JSON array
         p_oArray.Add(jsonObject)
@@ -58,10 +90,20 @@ Public Class GCloud
 
         Dim jsonObject As New JObject()
         jsonObject("sql") = p_oArray
-        jsonObject("replication") = p_bReplcate
         jsonObject("user") = p_sUserIDxx
 
-        Dim lnRes As Integer = RMJExecute("d:\GGC_Maven_Systems", EXEC, jsonObject.ToString)
+        Dim loSettings As New JsonSerializerSettings
+
+        loSettings.NullValueHandling = NullValueHandling.Ignore
+        loSettings.DefaultValueHandling = DefaultValueHandling.Ignore
+
+        Dim lsJSON As String = JsonConvert.SerializeObject(jsonObject, loSettings)
+
+        File.WriteAllText(CRUD, lsJSON, Encoding.UTF8)
+
+        Dim lnRes As Integer = RMJExecute("d:\GGC_Maven_Systems", EXEC, CRUD)
+        'delete the file
+        File.Delete(CRUD)
 
         Dim jsonString As String = File.ReadAllText(EXECUTION_RESULT)
         Dim jsobObject As JObject = JObject.Parse(jsonString)
@@ -70,13 +112,13 @@ Public Class GCloud
             If jsobObject("result").ToString() = "success" Then
                 Return True
             Else
-                Debug.Print(jsobObject("message").ToString())
+                Debug.Print(jsobObject("error").ToString())
 
                 If p_bShowMsgx Then
-                    MsgBox(jsobObject("message").ToString(), vbCritical, "Warning")
+                    MsgBox(jsobObject("error").ToString(), vbCritical, "Warning")
                 End If
 
-                Return Nothing
+                Return False
             End If
         Else
             Debug.Print("API Exeption Detected. Please ask assistance to MIS.")
@@ -149,11 +191,35 @@ Public Class GCloud
         Return dataTable
     End Function
 
+    'Private Function JSONExecute(ByVal WorkingDIR As String, ByVal ProcessPath As String, ByVal FileName As String) As Integer
+    '    Dim objProcess As System.Diagnostics.Process
+    '    Dim exitCode As Integer = 1
+    '    Try
+    '        objProcess = New System.Diagnostics.Process()
+    '        objProcess.StartInfo.WorkingDirectory = WorkingDIR
+    '        objProcess.StartInfo.FileName = ProcessPath
+    '        objProcess.StartInfo.Arguments = """" & FileName & """"
+    '        objProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+    '        objProcess.Start()
+
+    '        'Wait until the process passes back an exit code 
+    '        objProcess.WaitForExit()
+
+    '        exitCode = objProcess.ExitCode
+
+    '        'Free resources associated with this process
+    '        objProcess.Close()
+    '    Catch
+    '        Return exitCode
+    '    End Try
+
+    '    Return exitCode
+    'End Function
+
     Public Sub New()
         p_oArray = New JArray
 
         p_sUserIDxx = ""
-        p_bReplcate = False
     End Sub
 
     Public Property UserID As String
@@ -162,15 +228,6 @@ Public Class GCloud
         End Get
         Set(ByVal fsValue As String)
             p_sUserIDxx = fsValue
-        End Set
-    End Property
-
-    Public Property Replicate As Boolean
-        Get
-            Return p_bReplcate
-        End Get
-        Set(ByVal fbValue As Boolean)
-            p_bReplcate = fbValue
         End Set
     End Property
 
