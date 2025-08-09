@@ -6,6 +6,34 @@ Imports System.Threading
 Imports System.Text.RegularExpressions
 
 Public Module ModMain
+    'mac 2025-08-09
+    Public Function execJava(jarPath As String, mainClass As String, args As String) As String
+        Dim process As New Process()
+        process.StartInfo.FileName = "java"
+        process.StartInfo.Arguments = String.Format("-cp ""{0}"" {1} {2}", jarPath, mainClass, args)
+        process.StartInfo.RedirectStandardOutput = True
+        process.StartInfo.RedirectStandardError = True
+        process.StartInfo.UseShellExecute = False
+        process.StartInfo.CreateNoWindow = True
+
+        process.Start()
+        Dim output As String = process.StandardOutput.ReadToEnd()
+        Dim errOutput As String = process.StandardError.ReadToEnd()
+        process.WaitForExit()
+
+        ' Show messages if needed
+        If output.Trim().Length > 0 Then Console.WriteLine(output.Trim())
+        If errOutput.Trim().Length > 0 Then Console.WriteLine("Error: " & errOutput.Trim())
+
+        ' Return 0 for success, 1 for error based on Java's exit code
+        If process.ExitCode = 0 Then
+            Return 0
+        Else
+            Return 1
+        End If
+    End Function
+
+
     'mac 2020-07-23
     Public Function RMJExecuteL(ByVal WorkingDIR As String, ByVal FileName As String, ByVal Arguments As String) As Long
         Dim objProcess As System.Diagnostics.Process
@@ -154,9 +182,9 @@ Public Module ModMain
         Return Replace(Query, Find, Replacement, , , CompareMethod.Text)
     End Function
 
-    Public Function GetCodeApproval(ByVal oAppDriver As GRider, _
-                                    ByRef sApprovalCde As String, _
-                                    ByRef sApproveID As String, _
+    Public Function GetCodeApproval(ByVal oAppDriver As GRider,
+                                    ByRef sApprovalCde As String,
+                                    ByRef sApproveID As String,
                                     ByRef sApproveName As String) As Boolean
 
 
@@ -178,7 +206,7 @@ Public Module ModMain
                 lnCtr = 2
             Else
                 If Mid(UCase(loForm.CodeApproval), 4, 1) <> loForm.IssueeType Then
-                    MsgBox("Invalid Approval Parameter Detected." & vbCrLf & vbCrLf & _
+                    MsgBox("Invalid Approval Parameter Detected." & vbCrLf & vbCrLf &
                              "Kindly verify your entry.", vbCritical, "Approval Error")
                 Else
                     lbLogIn = True
@@ -202,13 +230,13 @@ endProc:
         Exit Function
     End Function
 
-    Public Function isValidApproveCode( _
-        ByVal fsSysReq As String, _
-        ByVal fsBranch As String, _
-        ByVal fsIssuee As String, _
-        ByVal fsDatexx As String, _
-        ByVal fsMiscxx As String, _
-        ByVal fsCdeGvn As String _
+    Public Function isValidApproveCode(
+        ByVal fsSysReq As String,
+        ByVal fsBranch As String,
+        ByVal fsIssuee As String,
+        ByVal fsDatexx As String,
+        ByVal fsMiscxx As String,
+        ByVal fsCdeGvn As String
         ) As Boolean
 
         Dim loCode As CodeApproval
@@ -239,27 +267,27 @@ endProc:
 
     End Function
 
-    Public Function GetNextCode(ByVal Table As String, _
-                                ByVal Field As String, _
-                                ByVal YearFormat As Boolean, _
+    Public Function GetNextCode(ByVal Table As String,
+                                ByVal Field As String,
+                                ByVal YearFormat As Boolean,
                                 ByVal Connection As MySqlConnection) As String
 
         Return GetNextCode(Table, Field, YearFormat, Connection, False, "")
     End Function
 
-    Public Function GetNextCode(ByVal Table As String, _
-                                ByVal Field As String, _
-                                ByVal YearFormat As Boolean, _
-                                ByVal Connection As MySqlConnection, _
+    Public Function GetNextCode(ByVal Table As String,
+                                ByVal Field As String,
+                                ByVal YearFormat As Boolean,
+                                ByVal Connection As MySqlConnection,
                                 ByVal ByBranch As Boolean) As String
         Return GetNextCode(Table, Field, YearFormat, Connection, ByBranch, "")
     End Function
 
-    Public Function GetNextCode(ByVal Table As String, _
-                                ByVal Field As String, _
-                                ByVal YearFormat As Boolean, _
-                                ByVal Connection As MySqlConnection, _
-                                ByVal ByBranch As Boolean, _
+    Public Function GetNextCode(ByVal Table As String,
+                                ByVal Field As String,
+                                ByVal YearFormat As Boolean,
+                                ByVal Connection As MySqlConnection,
+                                ByVal ByBranch As Boolean,
                                 ByVal Branch As String) As String
         Dim loDA As New MySqlDataAdapter
         Dim loDT As New DataTable
@@ -287,9 +315,9 @@ endProc:
             lnCounter = Len(lsField)
         End If
 
-        lsSQL = "SELECT " & Field & _
-                 " FROM " & Table & _
-                 " WHERE " & Field & " LIKE " & strParm(lsField & "%") & _
+        lsSQL = "SELECT " & Field &
+                 " FROM " & Table &
+                 " WHERE " & Field & " LIKE " & strParm(lsField & "%") &
                  " ORDER BY " & Field & " DESC LIMIT 1"
 
         Try
@@ -366,7 +394,7 @@ endProc:
             lnAllow = IFNull(foAppDriver.getConfiguration("AdvDatex"), 0)
 
             If DateDiff(DateInterval.Day, foAppDriver.getSysDate, CDate(foDate)) > lnAllow Then
-                MsgBox("Advancement of date exceeds the limit!" & vbCrLf & _
+                MsgBox("Advancement of date exceeds the limit!" & vbCrLf &
                         "Verify your entry then Try Again!", vbCritical, "Warning")
             Else
                 getValidDate = CDate(foDate)
@@ -518,7 +546,7 @@ endProc:
 
     'Translated from VB6
     'KALYPTUS - 2013.04.02 
-    Public Function ADO2SQL( _
+    Public Function ADO2SQL(
                        ByVal foDta As DataTable _
                      , ByVal fsTableNme As String _
                      , Optional ByVal fsFilter As String = "" _
@@ -588,7 +616,7 @@ endProc:
 
     ' XerSys- 2013.05.22
     '   Allows client to specify current row for multi-row processing
-    Public Function ADO2SQL( _
+    Public Function ADO2SQL(
                        ByVal foDta As DataTable _
                      , ByVal fnRow As Integer _
                      , ByVal fsTableNme As String _
@@ -741,14 +769,14 @@ endProc:
         Dim lnCtr As Integer
 
         If sSeparator = "" And sSeparator.Length <> 1 Then GoTo endProc
-        If sFormat = "" Then GoTo endproc
+        If sFormat = "" Then GoTo endProc
 
-        If InStr(sFormat, sSeparator, CompareMethod.Text) = 0 Then GoTo endproc
+        If InStr(sFormat, sSeparator, CompareMethod.Text) = 0 Then GoTo endProc
 
         lasFormat = Split(sFormat, sSeparator)
 
         For lnCtr = 0 To UBound(lasFormat)
-            lsString = lsString + Strings.Left(sValue, lasFormat(lnCtr).Length) & _
+            lsString = lsString + Strings.Left(sValue, lasFormat(lnCtr).Length) &
                         IIf(lnCtr = UBound(lasFormat), "", sSeparator)
             sValue = Strings.Right(sValue, sValue.Length - lasFormat(lnCtr).Length)
         Next
