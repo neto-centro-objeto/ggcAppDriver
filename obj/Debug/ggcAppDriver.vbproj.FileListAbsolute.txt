@@ -166,9 +166,6 @@ U:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.vbp
 U:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.dll
 U:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.xml
 U:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.pdb
-C:\GGC_Systems\vb.net\ggcAppDriver.dll
-C:\GGC_Systems\vb.net\ggcAppDriver.pdb
-C:\GGC_Systems\vb.net\ggcAppDriver.xml
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.AssemblyReference.cache
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\Interop.CRAXDDRT.dll
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.ResolveComReference.cache
@@ -183,3 +180,20 @@ D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDr
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.dll
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.xml
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.pdb
+C:\GGC_Systems\vb.net\ggcAppDriver.dll
+C:\GGC_Systems\vb.net\ggcAppDriver.pdb
+C:\GGC_Systems\vb.net\ggcAppDriver.xml
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.AssemblyReference.cache
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\Interop.CRAXDDRT.dll
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.ResolveComReference.cache
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.frmCodeApproval.resources
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.frmProgress.resources
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.frmLogin.resources
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.Lookup.resources
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.Resources.resources
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.GenerateResource.cache
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.CoreCompileInputs.cache
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDr.56C0890B.Up2Date
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.dll
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.xml
+D:\GMC_SEG_Folder\vb.net\ggcAppDriver\obj\Debug\ggcAppDriver.pdb

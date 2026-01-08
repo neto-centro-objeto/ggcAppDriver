@@ -1,4 +1,4 @@
-﻿Imports Org.Mentalis.Multimedia
+﻿'Imports Org.Mentalis.Multimedia
 
 Public Class frmProgress
     Private b_isCancel As Boolean
@@ -59,5 +59,9 @@ Public Class frmProgress
         'Dim v As New VideoFile(PistonInfo, Me.Panel1)
         'v.Repeat = True
         'v.Play()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As Windows.Forms.PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class
