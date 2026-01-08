@@ -335,9 +335,13 @@ Public Class GRider
     Public Function ExecuteQuery(ByVal fsSQLCmd As String) As DataTable
         Dim loDA As New MySqlDataAdapter
         Dim loDataTable As New DataTable
+        Dim loCommand As MySqlCommand
 
         Try
-            loDA.SelectCommand = New MySqlCommand(fsSQLCmd, p_oConn)
+            loCommand = New MySqlCommand(fsSQLCmd, p_oConn)
+            loCommand.CommandTimeout = 120
+
+            loDA.SelectCommand = loCommand
         Catch ex As MySqlException
             MsgBox(ex.Message)
             Throw ex
@@ -362,6 +366,7 @@ Public Class GRider
         Dim loDA As New MySqlDataAdapter
 
         Try
+            fsMySQLCmd.CommandTimeout = 120
             loDA.SelectCommand = fsMySQLCmd
         Catch ex As MySqlException
             MsgBox(ex.Message)
