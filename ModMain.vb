@@ -643,10 +643,10 @@ endProc:
                             lsSQL = lsSQL & ", " & AddField(loDta.Columns(lnCtr).ColumnName, FieldParam(loDta.Columns(lnCtr).DataType.Name, loDta(0).Item(lnCtr)))
                         End If
                     ElseIf IsDBNull(loDta(0).Item(lnCtr)) Then
-                        If IsDBNull(loRS(lnCtr).Item(lnCtr)) = False Then
+                        If IsDBNull(loRS(0).Item(lnCtr)) = False Then
                             lsSQL = lsSQL & ", " & AddField(loDta.Columns(lnCtr).ColumnName, FieldParam(loDta.Columns(lnCtr).DataType.Name, loDta(0).Item(lnCtr)))
                         End If
-                    ElseIf loRS(0).Item(lnCtr) <> loDta(0).Item(lnCtr) Then
+                    ElseIf loRS(0).Item(0) <> loDta(0).Item(lnCtr) Then
                         lsSQL = lsSQL & ", " & AddField(loDta.Columns(lnCtr).ColumnName, FieldParam(loDta.Columns(lnCtr).DataType.Name, loDta(0).Item(lnCtr)))
                     End If
                 Else
