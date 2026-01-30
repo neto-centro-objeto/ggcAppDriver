@@ -203,8 +203,8 @@ Public Class GRider
             p_oTrans = p_oConn.BeginTransaction()
             Return True
         Catch ex As Exception
-            MsgBox(ex.Message)
-            Throw ex
+            'MsgBox(ex.Message)
+            Throw
         End Try
 
         Return False
@@ -219,8 +219,8 @@ Public Class GRider
             p_oTrans.Commit()
 
         Catch ex As Exception
-            MsgBox(ex.Message)
-            Throw ex
+            'MsgBox(ex.Message)
+            Throw
         End Try
 
         p_oTrans = Nothing
@@ -235,8 +235,8 @@ Public Class GRider
         Try
             p_oTrans.Rollback()
         Catch ex As MySqlException
-            MsgBox(ex.Message)
-            Throw ex
+            'MsgBox(ex.Message)
+            Throw
         End Try
 
         p_oTrans = Nothing
@@ -310,8 +310,9 @@ Public Class GRider
                 p_oTrans.Rollback()
                 p_oTrans = Nothing
             End If
-            MsgBox(ex.Message)
-            Return 0
+            Throw
+            'MsgBox(ex.Message)
+            'Return 0
         End Try
 
         Try
@@ -321,8 +322,9 @@ Public Class GRider
                 p_oTrans.Rollback()
                 p_oTrans = Nothing
             End If
-            MsgBox(ex.Message)
-            Return 0
+            Throw
+            'MsgBox(ex.Message)
+            'Return 0
         End Try
 
         If lbCreate Then
@@ -343,8 +345,8 @@ Public Class GRider
 
             loDA.SelectCommand = loCommand
         Catch ex As MySqlException
-            MsgBox(ex.Message)
-            Throw ex
+            'MsgBox(ex.Message)
+            Throw
         End Try
 
         Debug.Print(fsSQLCmd)
@@ -369,8 +371,8 @@ Public Class GRider
             fsMySQLCmd.CommandTimeout = 120
             loDA.SelectCommand = fsMySQLCmd
         Catch ex As MySqlException
-            MsgBox(ex.Message)
-            Throw ex
+            'MsgBox(ex.Message)
+            Throw
         End Try
 
         Try
@@ -395,7 +397,7 @@ Public Class GRider
                                 ", sSerialNo = " & strParm(sSerialNo) & _
                                 ", sComptrNm = " & strParm(Environment.MachineName) & _
                                 ", dModified = " & datetimeParm(getSysDate)
-        Execute(lsSQLEvent, "lsSQLEvent")
+        Execute(lsSQLEvent, "Event_Master")
 
         Return True
     End Function
