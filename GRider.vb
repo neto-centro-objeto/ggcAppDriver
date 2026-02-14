@@ -280,6 +280,7 @@ Public Class GRider
         End If
 
         If sQuery = "" Then
+            If lbCreate Then p_oTrans.Rollback()
             Return 0
         End If
 
