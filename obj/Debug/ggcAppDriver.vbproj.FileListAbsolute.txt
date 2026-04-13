@@ -170,20 +170,3 @@ D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDr
 C:\GGC_Systems\vb.net\ggcAppDriver.dll
 C:\GGC_Systems\vb.net\ggcAppDriver.pdb
 C:\GGC_Systems\vb.net\ggcAppDriver.xml
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.AssemblyReference.cache
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\Interop.CRAXDDRT.dll
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.ResolveComReference.cache
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.frmCodeApproval.resources
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.frmProgress.resources
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.frmLogin.resources
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.Lookup.resources
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.Resources.resources
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.GenerateResource.cache
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.vbproj.CoreCompileInputs.cache
-C:\GGC_Systems\vb.net\RetMgtSys\ggcAppDriver.dll
-C:\GGC_Systems\vb.net\RetMgtSys\ggcAppDriver.pdb
-C:\GGC_Systems\vb.net\RetMgtSys\ggcAppDriver.xml
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDr.56C0890B.Up2Date
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.dll
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.xml
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Debug\ggcAppDriver.pdb
