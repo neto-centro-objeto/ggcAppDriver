@@ -15,19 +15,8 @@ E:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.p
 D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\bin\Release\ggcAppDriver.dll
 D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\bin\Release\ggcAppDriver.pdb
 D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\bin\Release\ggcAppDriver.xml
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.frmLogin.resources
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.Lookup.resources
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.Resources.resources
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.dll
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.xml
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.pdb
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbproj.GenerateResource.Cache
 D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\bin\Release\MySql.Data.dll
 D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\bin\Release\MySql.Data.Entity.dll
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.frmProgress.resources
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\Interop.CRAXDDRT.dll
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbproj.ResolveComReference.cache
-D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbprojResolveAssemblyReference.cache
 D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\bin\Release\Multimedia.dll
 D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\bin\Release\Multimedia.pdb
 D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\bin\Release\Multimedia.xml
@@ -131,9 +120,6 @@ Z:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.p
 Z:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbprojResolveAssemblyReference.cache
 Z:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbproj.AssemblyReference.cache
 Z:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbproj.CoreCompileInputs.cache
-C:\GGC_Systems\vb.net\ggcAppDriver.dll
-C:\GGC_Systems\vb.net\ggcAppDriver.pdb
-C:\GGC_Systems\vb.net\ggcAppDriver.xml
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\Interop.CRAXDDRT.dll
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbproj.ResolveComReference.cache
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.frmCodeApproval.resources
@@ -145,3 +131,20 @@ D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcApp
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.dll
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.xml
 D:\Guanzon\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.pdb
+C:\GGC_Systems\vb.net\ggcAppDriver.dll
+C:\GGC_Systems\vb.net\ggcAppDriver.pdb
+C:\GGC_Systems\vb.net\ggcAppDriver.xml
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbproj.AssemblyReference.cache
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\Interop.CRAXDDRT.dll
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbproj.ResolveComReference.cache
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.frmCodeApproval.resources
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.frmProgress.resources
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.frmLogin.resources
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.Lookup.resources
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.Resources.resources
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbproj.GenerateResource.cache
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.vbproj.CoreCompileInputs.cache
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDr.56C0890B.Up2Date
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.dll
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.xml
+D:\GMC SEG Folder\vb.net\My Applications\ggcAppDriver\obj\Release\ggcAppDriver.pdb

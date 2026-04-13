@@ -323,20 +323,48 @@ Public Class Lookup
         Return lasColAlign
     End Function
 
+    'Private Function setSQLAdapter() As Boolean
+    '    Dim lsSQL As String
+
+    '    'kalyptus - 2013.07.03
+    '    'add testing of p_bshowcondition. Load p_sCondition if false
+    '    If p_bShowCondition Then
+    '        lsSQL = AddCondition(p_sSQLSource, p_oFieldName(p_nIndex) & " LIKE " & strParm(Trim(txtSearch.Text) & "%"))
+    '    Else
+    '        lsSQL = AddCondition(p_sSQLSource, p_sCondition)
+    '    End If
+
+    '    lsSQL = setOrderBy(lsSQL)
+    '    'p_oDA.SelectCommand.CommandText = lsSQL 
+    '    p_oDA.SelectCommand = New MySqlCommand(lsSQL, p_oAppDriver.Connection)
+    '    Return True
+    'End Function
+
     Private Function setSQLAdapter() As Boolean
         Dim lsSQL As String
 
-        'kalyptus - 2013.07.03
-        'add testing of p_bshowcondition. Load p_sCondition if false
+        ' Build condition
         If p_bShowCondition Then
-            lsSQL = AddCondition(p_sSQLSource, p_oFieldName(p_nIndex) & " LIKE " & strParm(Trim(txtSearch.Text) & "%"))
+            ' Use parameterized LIKE to avoid SQL injection
+            lsSQL = AddCondition(p_sSQLSource, p_oFieldName(p_nIndex) & " LIKE @SearchText")
         Else
             lsSQL = AddCondition(p_sSQLSource, p_sCondition)
         End If
 
+        ' Apply ordering
         lsSQL = setOrderBy(lsSQL)
-        'p_oDA.SelectCommand.CommandText = lsSQL 
-        p_oDA.SelectCommand = New MySqlCommand(lsSQL, p_oAppDriver.Connection)
+
+        ' Create command
+        Dim cmd As New MySqlCommand(lsSQL, p_oAppDriver.Connection)
+
+        ' Add parameter if needed
+        If p_bShowCondition Then
+            cmd.Parameters.AddWithValue("@SearchText", Trim(txtSearch.Text) & "%")
+        End If
+
+        ' Assign to DataAdapter
+        p_oDA.SelectCommand = cmd
+
         Return True
     End Function
 

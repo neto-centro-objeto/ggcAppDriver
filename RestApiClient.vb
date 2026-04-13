@@ -39,6 +39,14 @@ Public Class RestApiClient
         Return Await response.Content.ReadAsStringAsync()
     End Function
 
+    Public Function Post(endpoint As String, data As JObject) As String
+        Dim jsonData As String = data.ToString()
+        Dim content As New StringContent(jsonData, Encoding.UTF8, "application/json")
+        Dim response As HttpResponseMessage = _client.PostAsync(endpoint, content).Result
+        response.EnsureSuccessStatusCode()
+        Return response.Content.ReadAsStringAsync().Result
+    End Function
+
     ' PUT request accepting JObject
     Public Async Function PutAsync(endpoint As String, data As JObject) As Task(Of String)
         Dim jsonData As String = data.ToString()
