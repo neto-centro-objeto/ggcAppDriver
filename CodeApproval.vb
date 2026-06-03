@@ -80,6 +80,12 @@ Public Class CodeApproval
     Public Const pxePreApproved As String = "PA"
     Public Const pxeJobOrderWOGCard As String = "JG"        'Spareparts
 
+    'mac 2026.06.03
+    Public Const pxeMCSalesCancel As String = "X1"
+    Public Const pxeMonthlyPaymentCancel As String = "X2"
+    Public Const pxeSPSalesCancel As String = "X3"
+    Public Const pxeJobOrderCancel As String = "X4"
+
     Public ReadOnly Property Result() As String
         Get
             If pbEncode Then
@@ -165,16 +171,20 @@ Public Class CodeApproval
             Case CodeApproval.pxeDay2Day
                 'Misc should be the time the request was issued...
                 poResult.Misc = Chr(iRandom(65, 90)) & PadLeft(Hex(Val(poRawxxx.Misc) + 70), 2, "0")
-            Case CodeApproval.pxeOfficeRebate, _
-                 CodeApproval.pxeFieldRebate, _
-                 CodeApproval.pxeMCDiscount, _
-                 CodeApproval.pxePartsDiscount, _
-                 CodeApproval.pxeSPPurcDelivery, _
-                 CodeApproval.pxeIssueORNotPR, _
-                 CodeApproval.pxeIssueORNotSI, _
-                 CodeApproval.pxeMCIssuance, _
-                 CodeApproval.pxeMPDiscount, _
-                 CodeApproval.pxeJobOrderWOGCard
+            Case CodeApproval.pxeOfficeRebate,
+                 CodeApproval.pxeFieldRebate,
+                 CodeApproval.pxeMCDiscount,
+                 CodeApproval.pxePartsDiscount,
+                 CodeApproval.pxeSPPurcDelivery,
+                 CodeApproval.pxeIssueORNotPR,
+                 CodeApproval.pxeIssueORNotSI,
+                 CodeApproval.pxeMCIssuance,
+                 CodeApproval.pxeMPDiscount,
+                 CodeApproval.pxeJobOrderWOGCard,
+                 CodeApproval.pxeMCSalesCancel,
+                 CodeApproval.pxeMonthlyPaymentCancel,
+                 CodeApproval.pxeSPSalesCancel,
+                 CodeApproval.pxeJobOrderCancel
 
                 If poRawxxx.XSystem <> CodeApproval.pxeJobOrderWOGCard Then
                     'Misc should be the reference number of the transaction approved...
