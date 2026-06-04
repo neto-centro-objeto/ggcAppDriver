@@ -1,4 +1,5 @@
 ﻿'€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€
+'€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€
 ' Guanzon Software Engineering Group
 ' Guanzon Group of Companies
 ' Perez Blvd., Dagupan City
@@ -94,6 +95,7 @@ Public Class GRider
 
     Private p_sEmployID As String
     Private p_sEmpLevID As String
+    Private p_sDeptIDxx As String
 
     Private pbChkErrCt As Boolean
     Private p_nHexCrypt As Integer
@@ -154,6 +156,9 @@ Public Class GRider
             p_sLogNamex = loDT.Rows(0).Item("sLogNamex")
             p_nUserLevl = loDT.Rows(0).Item("nUserLevl")
             p_sEmployNo = loDT.Rows(0).Item("sEmployNo")
+            p_sDeptIDxx = loDT.Rows(0).Item("sDeptIDxx")
+            p_sEmpLevID = loDT.Rows(0).Item("sEmpLevID")
+            p_sEmployID = p_sEmployNo
         End If
         Return lbLogIn
     End Function
@@ -180,6 +185,9 @@ Public Class GRider
         p_sLogNamex = loDT.Rows(0).Item("sLogNamex")
         p_nUserLevl = loDT.Rows(0).Item("nUserLevl")
         p_sEmployNo = loDT.Rows(0).Item("sEmployNo")
+        p_sDeptIDxx = loDT.Rows(0).Item("sDeptIDxx")
+        p_sEmpLevID = loDT.Rows(0).Item("sEmpLevID")
+        p_sEmployID = p_sEmployNo
         Return True
     End Function
 
@@ -773,6 +781,12 @@ Public Class GRider
         End Get
     End Property
 
+    Public ReadOnly Property DepartmentID As String
+        Get
+            Return p_sDeptIDxx
+        End Get
+    End Property
+
     Public ReadOnly Property ServerUser As String
         Get
             If p_nUserLevl >= xeUserRights.MANAGER Then
@@ -942,40 +956,48 @@ Public Class GRider
     End Function
 
     Private Function getSQ_UserByID() As String
-        Return "SELECT sUserIDxx" & _
-              ", sLogNamex" & _
-              ", sPassword" & _
-              ", sUserName" & _
-              ", nUserLevl" & _
-              ", cUserType" & _
-              ", sProdctID" & _
-              ", cUserStat" & _
-              ", nSysError" & _
-              ", cLogStatx" & _
-              ", cLockStat" & _
-              ", cAllwLock" & _
-              ", sEmployNo" & _
-           " FROM xxxSysUser" & _
-           " WHERE sUserIDxx = ?sUserIDxx"
+        Return "SELECT" &
+                    "  a.sUserIDxx" &
+                    ", a.sLogNamex" &
+                    ", a.sPassword" &
+                    ", a.sUserName" &
+                    ", a.nUserLevl" &
+                    ", a.cUserType" &
+                    ", a.sProdctID" &
+                    ", a.cUserStat" &
+                    ", a.nSysError" &
+                    ", a.cLogStatx" &
+                    ", a.cLockStat" &
+                    ", a.cAllwLock" &
+                    ", a.sEmployNo" &
+                    ", b.sDeptIDxx" &
+                    ", b.sEmpLevID" &
+                " FROM xxxSysUser a" &
+                    " LEFT JOIN Employee_Master001 b ON a.sEmployNo = b.sEmployID" &
+                " WHERE a.sUserIDxx = ?sUserIDxx"
     End Function
 
     Private Function getSQ_User() As String
-        Return "SELECT sUserIDxx" & _
-              ", sLogNamex" & _
-              ", sPassword" & _
-              ", sUserName" & _
-              ", nUserLevl" & _
-              ", cUserType" & _
-              ", sProdctID" & _
-              ", cUserStat" & _
-              ", nSysError" & _
-              ", cLogStatx" & _
-              ", cLockStat" & _
-              ", cAllwLock" & _
-              ", sEmployNo" & _
-           " FROM xxxSysUser" & _
-           " WHERE sLogNamex = ?sLogNamex" & _
-              " AND sPassword = ?sPassword"
+        Return "SELECT" &
+                    "  a.sUserIDxx" &
+                    ", a.sLogNamex" &
+                    ", a.sPassword" &
+                    ", a.sUserName" &
+                    ", a.nUserLevl" &
+                    ", a.cUserType" &
+                    ", a.sProdctID" &
+                    ", a.cUserStat" &
+                    ", a.nSysError" &
+                    ", a.cLogStatx" &
+                    ", a.cLockStat" &
+                    ", a.cAllwLock" &
+                    ", a.sEmployNo" &
+                    ", b.sDeptIDxx" &
+                    ", b.sEmpLevID" &
+                " FROM xxxSysUser a" &
+                    " LEFT JOIN Employee_Master001 b ON a.sEmployNo = b.sEmployID" &
+                " WHERE a.sLogNamex = ?sLogNamex" &
+                    " AND a.sPassword = ?sPassword"
     End Function
 
     Public Sub New(ByVal fsProdctID As String)

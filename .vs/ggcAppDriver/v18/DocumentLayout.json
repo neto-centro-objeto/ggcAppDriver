@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcAppDriver\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6FA248F3-A2BA-43DF-BE98-032E11714DB5}|ggcAppDriver.vbproj|d:\\guanzon\\gmc seg folder\\vb net\\my applications\\ggcappdriver\\grider.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{6FA248F3-A2BA-43DF-BE98-032E11714DB5}|ggcAppDriver.vbproj|solutionrelative:grider.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6FA248F3-A2BA-43DF-BE98-032E11714DB5}|ggcAppDriver.vbproj|d:\\guanzon\\gmc seg folder\\vb net\\my applications\\ggcappdriver\\codeapproval.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{6FA248F3-A2BA-43DF-BE98-032E11714DB5}|ggcAppDriver.vbproj|solutionrelative:codeapproval.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -29,84 +33,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CodeApproval.vb",
-              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcAppDriver\\CodeApproval.vb",
-              "RelativeDocumentMoniker": "CodeApproval.vb",
-              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcAppDriver\\CodeApproval.vb",
-              "RelativeToolTip": "CodeApproval.vb",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAALkAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-06-03T08:32:05.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmARPaymentApproval.vb",
-              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\frmARPaymentApproval.vb",
-              "RelativeDocumentMoniker": "..\\..\\My Projects\\Lender\\frmARPaymentApproval.vb",
-              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\frmARPaymentApproval.vb",
-              "RelativeToolTip": "..\\..\\My Projects\\Lender\\frmARPaymentApproval.vb",
-              "ViewState": "AgIAAMoAAAAAAAAAAAAAAN8AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-06-03T08:15:41.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmARPaymentApproval.vb [Design]",
-              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\frmARPaymentApproval.vb",
-              "RelativeDocumentMoniker": "..\\..\\My Projects\\Lender\\frmARPaymentApproval.vb",
-              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\frmARPaymentApproval.vb [Design]",
-              "RelativeToolTip": "..\\..\\My Projects\\Lender\\frmARPaymentApproval.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-06-03T08:15:30.696Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "mdiMain.vb",
-              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\mdiMain.vb",
-              "RelativeDocumentMoniker": "..\\..\\My Projects\\Lender\\mdiMain.vb",
-              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\mdiMain.vb",
-              "RelativeToolTip": "..\\..\\My Projects\\Lender\\mdiMain.vb",
-              "ViewState": "AgIAAEQBAAAAAAAAAAAiwFEBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-06-03T08:14:42.398Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "mdiMain.vb [Design]",
-              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\mdiMain.vb",
-              "RelativeDocumentMoniker": "..\\..\\My Projects\\Lender\\mdiMain.vb",
-              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\mdiMain.vb [Design]",
-              "RelativeToolTip": "..\\..\\My Projects\\Lender\\mdiMain.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-06-03T08:09:47.141Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ARPayment.vb",
-              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcLRTransaction\\ARPayment.vb",
-              "RelativeDocumentMoniker": "..\\ggcLRTransaction\\ARPayment.vb",
-              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcLRTransaction\\ARPayment.vb",
-              "RelativeToolTip": "..\\ggcLRTransaction\\ARPayment.vb",
-              "ViewState": "AgIAAJQCAAAAAAAAAAAiwIACAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-06-03T07:53:15.92Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -114,6 +42,90 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GRider.vb",
+              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcAppDriver\\GRider.vb",
+              "RelativeDocumentMoniker": "GRider.vb",
+              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcAppDriver\\GRider.vb",
+              "RelativeToolTip": "GRider.vb",
+              "ViewState": "AgIAAM4DAAAAAAAAAAAIwOUDAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-06-04T05:53:28.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CodeApproval.vb",
+              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcAppDriver\\CodeApproval.vb",
+              "RelativeDocumentMoniker": "CodeApproval.vb",
+              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcAppDriver\\CodeApproval.vb",
+              "RelativeToolTip": "CodeApproval.vb",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAALcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-06-03T08:32:05.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmARPaymentApproval.vb",
+              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\frmARPaymentApproval.vb",
+              "RelativeDocumentMoniker": "..\\..\\My Projects\\Lender\\frmARPaymentApproval.vb",
+              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\frmARPaymentApproval.vb",
+              "RelativeToolTip": "..\\..\\My Projects\\Lender\\frmARPaymentApproval.vb",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAAAN8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-06-03T08:15:41.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmARPaymentApproval.vb [Design]",
+              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\frmARPaymentApproval.vb",
+              "RelativeDocumentMoniker": "..\\..\\My Projects\\Lender\\frmARPaymentApproval.vb",
+              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\frmARPaymentApproval.vb [Design]",
+              "RelativeToolTip": "..\\..\\My Projects\\Lender\\frmARPaymentApproval.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-06-03T08:15:30.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "mdiMain.vb",
+              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\mdiMain.vb",
+              "RelativeDocumentMoniker": "..\\..\\My Projects\\Lender\\mdiMain.vb",
+              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\mdiMain.vb",
+              "RelativeToolTip": "..\\..\\My Projects\\Lender\\mdiMain.vb",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAiwFEBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-06-03T08:14:42.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "mdiMain.vb [Design]",
+              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\mdiMain.vb",
+              "RelativeDocumentMoniker": "..\\..\\My Projects\\Lender\\mdiMain.vb",
+              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Projects\\Lender\\mdiMain.vb [Design]",
+              "RelativeToolTip": "..\\..\\My Projects\\Lender\\mdiMain.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-06-03T08:09:47.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ARPayment.vb",
+              "DocumentMoniker": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcLRTransaction\\ARPayment.vb",
+              "RelativeDocumentMoniker": "..\\ggcLRTransaction\\ARPayment.vb",
+              "ToolTip": "D:\\Guanzon\\GMC SEG Folder\\vb net\\My Applications\\ggcLRTransaction\\ARPayment.vb",
+              "RelativeToolTip": "..\\ggcLRTransaction\\ARPayment.vb",
+              "ViewState": "AgIAAJQCAAAAAAAAAAAiwIACAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-06-03T07:53:15.92Z"
             }
           ]
         }
