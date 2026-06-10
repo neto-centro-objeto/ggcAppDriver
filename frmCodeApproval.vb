@@ -176,13 +176,13 @@ Public Class frmCodeApproval
                 GoTo endProc
             Else
 
-                p_sUserIDxx = loRow(0).Item("sUserIDxx")
-                p_sIssueexx = loRow(0).Item("sIssueexx")
+                p_sUserIDxx = loRow("sUserIDxx")
+                p_sIssueexx = loRow("sIssueexx")
 
-                If loRow(0).Item("sEmpLevID") = "4" Then
+                If loRow("sEmpLevID") = "4" Then
                     p_cIssueexx = "0"
                 Else
-                    Select Case loRow(0).Item("sDeptIDxx")
+                    Select Case loRow("sDeptIDxx")
                         Case "021"   'Human Capital Management
                             p_cIssueexx = "1"
                         Case "022"   'Credit Support Services
